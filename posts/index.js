@@ -14,14 +14,14 @@ app.get("/posts", (req, res) => {
   res.send(posts);
 });
 
-app.post("/posts", async (req, res) => {
+app.post("/posts/create", async (req, res) => {
   const id = randomUUID();
   posts[id] = {
     id,
     title: req.body.title,
   };
   await axios
-    .post("http://localhost:4005/events", {
+    .post("http://event-bus-srv:4005/events", {
       type: "PostCreated",
       data: posts[id],
     })
