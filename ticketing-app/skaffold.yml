@@ -6,6 +6,8 @@ manifests:
 build:
   local:
     push: false
+  # googleCloudBuild:
+  #   projectId: seventh-hallway-391612
   artifacts:
     # - image: leonyalin/client
     #   context: ./client
@@ -15,6 +17,7 @@ build:
     #     manual:
     #       - src: "src/**/*.js"
     #         dest: .
+    # - image: us.gcr.io/seventh-hallway-391612/auth
     - image: leonyalin/auth
       context: ./auth
       docker:

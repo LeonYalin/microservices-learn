@@ -14,6 +14,7 @@ spec:
     spec:
       containers:
         - name: auth
+          # image: us.gcr.io/seventh-hallway-391612/auth
           image: leonyalin/auth
 ---
 apiVersion: v1
