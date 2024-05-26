@@ -42,3 +42,11 @@ build:
         manual:
           - src: 'src/**/*.ts'
             dest: .
+    - image: leonyalin/orders
+      context: ./orders
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: 'src/**/*.ts'
+            dest: .
