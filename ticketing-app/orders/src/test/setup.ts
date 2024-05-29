@@ -5,13 +5,11 @@ import jwt from 'jsonwebtoken';
 declare global {
   var signin: () => string[];
 }
-
 jest.mock('../nats-wrapper');
 
 let mongo: any;
 beforeAll(async () => {
-  jest.clearAllMocks();
-  process.env.JWT_KEY = 'admin';
+  process.env.JWT_KEY = 'asdfasdf';
   process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
   const mongo = await MongoMemoryServer.create();
@@ -21,6 +19,7 @@ beforeAll(async () => {
 });
 
 beforeEach(async () => {
+  jest.clearAllMocks();
   const collections = await mongoose.connection.db.collections();
 
   for (let collection of collections) {

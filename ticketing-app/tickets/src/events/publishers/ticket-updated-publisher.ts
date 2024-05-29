@@ -1,8 +1,4 @@
-import {
-  TicketUpdatedEvent,
-  Subjects,
-  Publisher,
-} from '@leonyalintickets/common';
+import { Publisher, Subjects, TicketUpdatedEvent } from '@leonyalintickets/common';
 
 export class TicketUpdatedPublisher extends Publisher<TicketUpdatedEvent> {
   readonly subject = Subjects.TicketUpdated;

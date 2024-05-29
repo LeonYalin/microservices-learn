@@ -6,7 +6,7 @@ import { natsWrapper } from '../../nats-wrapper';
 import mongoose from 'mongoose';
 
 it('marks an order as cancelled', async () => {
-  // create a ticket
+  // create a ticket with Ticket Model
   const ticket = Ticket.build({
     id: new mongoose.Types.ObjectId().toHexString(),
     title: 'concert',
@@ -29,9 +29,10 @@ it('marks an order as cancelled', async () => {
     .send()
     .expect(204);
 
-  // expect the order to be cancelled
+  // expectation to make sure the thing is cancelled
   const updatedOrder = await Order.findById(order.id);
-  expect(updatedOrder?.status).toEqual(OrderStatus.Cancelled);
+
+  expect(updatedOrder!.status).toEqual(OrderStatus.Cancelled);
 });
 
 it('emits a order cancelled event', async () => {

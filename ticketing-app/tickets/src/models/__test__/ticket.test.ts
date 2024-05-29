@@ -5,7 +5,7 @@ it('implements optimistic concurrency control', async () => {
   const ticket = Ticket.build({
     title: 'concert',
     price: 5,
-    userId: '123',
+    userId: '123'
   });
 
   // Save the ticket to the database

@@ -2,7 +2,7 @@ import express, { Request, Response } from 'express';
 import {
   requireAuth,
   NotFoundError,
-  NotAuthorizedError,
+  NotAuthorizedError
 } from '@leonyalintickets/common';
 import { Order, OrderStatus } from '../models/order';
 import { OrderCancelledPublisher } from '../events/publishers/order-cancelled-publisher';
@@ -32,8 +32,8 @@ router.delete(
       id: order.id,
       version: order.version,
       ticket: {
-        id: order.ticket.id,
-      },
+        id: order.ticket.id
+      }
     });
 
     res.status(204).send(order);

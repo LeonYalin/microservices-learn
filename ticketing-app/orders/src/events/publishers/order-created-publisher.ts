@@ -1,9 +1,5 @@
-import {
-  OrderCreatedEvent,
-  Publisher,
-  Subjects,
-} from '@leonyalintickets/common';
+import { Publisher, OrderCreatedEvent, Subjects } from '@leonyalintickets/common';
 
 export class OrderCreatedPublisher extends Publisher<OrderCreatedEvent> {
-  readonly subject = Subjects.OrderCreated;
+  subject: Subjects.OrderCreated = Subjects.OrderCreated;
 }
